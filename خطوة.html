@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>خطوة</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf7ff;--card:#fff;--ink:#251b3d;--mute:#6f6688;--line:#e7dff7;--pri:#6a44c2;--pri2:#8e5be8;--pink:#e5589e;--tint:#f3ecff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#150f22;--card:#211935;--ink:#f2edfc;--mute:#a99fc7;--line:#3a2f57;--pri:#b79cff;--pri2:#9a74f0;--pink:#f283b8;--tint:#2c2347}}
+:root[data-theme="dark"]{--bg:#150f22;--card:#211935;--ink:#f2edfc;--mute:#a99fc7;--line:#3a2f57;--pri:#b79cff;--pri2:#9a74f0;--pink:#f283b8;--tint:#2c2347}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;line-height:1.7}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{max-width:1100px;margin:auto;padding:10px 18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:1.5rem;background:linear-gradient(135deg,var(--pri2),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none;margin-inline-end:auto}
+nav{display:flex;gap:2px;flex-wrap:wrap}
+nav a{padding:6px 12px;border-radius:99px;color:var(--mute);text-decoration:none;cursor:pointer}
+nav a:hover{background:var(--tint);color:var(--pri)}
+.btn{border:0;border-radius:99px;padding:9px 20px;cursor:pointer;font-weight:700;background:linear-gradient(135deg,var(--pri2),var(--pink));color:#fff;text-decoration:none;display:inline-block}
+.btn.ghost{background:var(--tint);color:var(--pri)}.btn.sm{padding:5px 14px;font-size:.88rem}
+section{max-width:1100px;margin:auto;padding:36px 18px}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center;padding-top:48px}
+.pill{display:inline-block;background:var(--tint);color:var(--pri);border-radius:99px;padding:3px 14px;font-size:.9rem;font-weight:500}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.25;margin:12px 0}
+.hero h1 b{background:linear-gradient(135deg,var(--pri2),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mute);max-width:480px;font-size:1.1rem}
+.art{aspect-ratio:1;max-width:320px;margin:auto;width:100%;border-radius:36% 64% 55% 45%/50% 40% 60% 50%;background:linear-gradient(135deg,var(--pri2),var(--pink));display:grid;place-items:center;font-size:6rem}
+h2{font-size:1.6rem;margin:0 0 6px}.sub{color:var(--mute);margin:0 0 18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.num{font-size:1.9rem;font-weight:700;color:var(--pink);line-height:1}
+.card h3{margin:8px 0 2px;font-size:1.1rem}.card p{margin:0;color:var(--mute)}
+.filters{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:16px}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:12px}
+label,.lb{display:block;font-size:.85rem;color:var(--mute);margin-bottom:3px}
+input,select{width:100%;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pills button{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:4px 16px;cursor:pointer}
+.pills button.on{background:linear-gradient(135deg,var(--pri2),var(--pink));color:#fff;border-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.opp .m{color:var(--mute);font-size:.88rem}
+.tag{display:inline-block;font-size:.78rem;padding:1px 12px;border-radius:99px;background:var(--tint);color:var(--pri);font-weight:500}
+.row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.empty{grid-column:1/-1;padding:28px;text-align:center;color:var(--mute);border:1px dashed var(--line);border-radius:20px}
+.org .k{font-size:.8rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.stats .card{text-align:center}.stats b{font-size:2rem;display:block;color:var(--pri);line-height:1.2}
+.dh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+dialog{border:0;border-radius:22px;padding:24px;width:min(420px,92vw);background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(20,10,40,.55)}
+.f{margin-bottom:10px}.cb{display:flex;flex-wrap:wrap;gap:6px 14px}.cb label{display:flex;gap:5px;align-items:center;color:var(--ink);margin:0}.cb input{width:auto}
+.err{color:#c0264f;font-size:.88rem;min-height:1.3em}
+#toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));inset-inline:0;margin:auto;width:max-content;max-width:90vw;background:var(--ink);color:var(--bg);padding:9px 18px;border-radius:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+footer{text-align:center;color:var(--mute);padding:28px 18px}
+[hidden]{display:none!important}
+@media (max-width:720px){.hero{grid-template-columns:1fr}.art{max-width:200px;font-size:4rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="logo" href="#home">خطوة</a>
+<nav>
+<a href="#home">الرئيسية</a><a href="#discover">اكتشف الفرص</a><a href="#events">الفعاليات</a><a href="#orgs">الجهات</a>
+<a id="navDash" onclick="goDash()">لوحتي</a>
+</nav>
+<span id="authBtn"></span>
+</div></header>
+
+<section id="home" class="hero">
+<div>
+<span class="pill">منصة فرص للطلاب</span>
+<h1>كل فرصة تبدأ بـ <b>خطوة.</b></h1>
+<p>اكتشف التدريب والتطوع والهاكاثونات والدورات والمنح والفعاليات التي تناسب تخصصك ومستواك واهتماماتك.</p>
+<button class="btn" onclick="startNow()">أنشئ ملفك الآن ✦</button>
+</div>
+<div class="art" aria-hidden="true">🚀</div>
+</section>
+
+<section id="discover">
+<h2>اكتشف الفرص 🔎</h2><p class="sub">اختر أكثر من فلتر، والنتائج تتغير معك مباشرة.</p>
+<div class="filters">
+<label for="q">بحث</label><input id="q" placeholder="اسم الفرصة أو الجهة" oninput="F.q=this.value;draw()">
+<div style="margin-top:12px"><span class="lb">نوع الفرصة</span><div class="pills" id="typePills"></div></div>
+<div class="fg">
+<div><label for="fm">التخصص</label><select id="fm" onchange="F.major=this.value;draw()"></select></div>
+<div><label for="fl">المستوى</label><select id="fl" onchange="F.level=this.value;draw()"></select></div>
+<div><label for="fc">المدينة</label><select id="fc" onchange="F.city=this.value;draw()"></select></div>
+</div></div>
+<div class="grid" id="list"></div>
+</section>
+
+<section id="events">
+<h2>الفعاليات 📅</h2><p class="sub">هاكاثونات وورش ومسابقات قادمة.</p>
+<div class="grid" id="evList"></div>
+</section>
+
+<section id="orgs">
+<h2>الجهات والشركات 🏢</h2><p class="sub">جهات تقدم فرصًا للطلاب.</p>
+<div class="grid" id="orgList"></div>
+</section>
+
+<section id="dash" hidden>
+<div class="dh"><h2 id="dTitle" style="margin:0">لوحة الطالب 👋</h2>
+<div class="row" style="margin:0"><button class="btn ghost sm" onclick="editProfile()">✏️ تعديل الملف</button><button class="btn ghost sm" onclick="logout()">↪ تسجيل الخروج</button></div></div>
+<div class="stats"><div class="card"><b id="sSaved">0</b>فرص محفوظة</div><div class="card"><b id="sApplied">0</b>فرص مسجل بها</div><div class="card"><b id="sRec">0</b>فرص مقترحة</div></div>
+<h2>مقترحة لك 🎯</h2>
+<div class="grid" id="recList"></div>
+<h2 style="margin-top:28px">محفوظاتي</h2>
+<div class="grid" id="savedList"></div>
+<h2 style="margin-top:28px">سجل التسجيل</h2>
+<div class="grid" id="appList"></div>
+</section>
+
+<footer>خطوة — اكتشف فرصتك، وابنِ مستقبلك.</footer>
+<div id="toast" role="status"></div>
+<dialog id="dlg"><div id="dlgBody"></div></dialog>
+
+<script>
+const MAJORS=['علوم الحاسب','هندسة البرمجيات','الأمن السيبراني','الذكاء الاصطناعي','نظم المعلومات','هندسة','طب','تمريض','إدارة أعمال','محاسبة','قانون','إعلام','تصميم','تسويق'];
+const TYPES=['هاكاثون','تطوع','تدريب','دورة','ورشة','منحة','مسابقة'];
+const LEVELS=['سنة أولى','سنة ثانية','سنة ثالثة','سنة رابعة','خريج'];
+const CITIES=['مكة','جدة','الرياض','عن بُعد'];
+const ALL='الكل';
+const ORGS=[{n:'Tech Hub',k:'شركة',d:'فرص تقنية وتدريبية للطلاب.'},{n:'مركز الابتكار',k:'جامعة',d:'ورش ومسابقات ومبادرات طلابية.'},{n:'أثر مجتمعي',k:'مبادرة',d:'فرص تطوع ومشاركة مجتمعية.'}];
+// major:[] = كل التخصصات ، level:[] = كل المستويات
+const OPPS=[
+{id:1,t:'تدريب صيفي في تطوير الويب',o:'Tech Hub',type:'تدريب',major:['علوم الحاسب','هندسة البرمجيات','نظم المعلومات'],level:['سنة ثالثة','سنة رابعة','خريج'],city:'الرياض',end:'2026-11-15'},
+{id:2,t:'هاكاثون الأمن السيبراني',o:'مركز الابتكار',type:'هاكاثون',major:['الأمن السيبراني','علوم الحاسب'],level:[],city:'جدة',end:'2026-10-20'},
+{id:3,t:'دورة أساسيات الذكاء الاصطناعي',o:'Tech Hub',type:'دورة',major:['الذكاء الاصطناعي','علوم الحاسب','هندسة'],level:[],city:'عن بُعد',end:'2026-12-01'},
+{id:4,t:'حملة التبرع بالدم',o:'أثر مجتمعي',type:'تطوع',major:['طب','تمريض'],level:[],city:'مكة',end:'2026-10-25'},
+{id:5,t:'منحة التميز الدراسي',o:'مركز الابتكار',type:'منحة',major:[],level:['سنة أولى','سنة ثانية'],city:'عن بُعد',end:'2026-12-31'},
+{id:6,t:'تدريب تعاوني في المحاسبة',o:'Tech Hub',type:'تدريب',major:['محاسبة','إدارة أعمال'],level:['سنة ثالثة','سنة رابعة','خريج'],city:'جدة',end:'2026-11-10'},
+{id:7,t:'ورشة تصميم تجربة المستخدم',o:'مركز الابتكار',type:'ورشة',major:['تصميم','إعلام','هندسة البرمجيات'],level:[],city:'مكة',end:'2026-11-05'},
+{id:8,t:'هاكاثون الصحة الرقمية',o:'Tech Hub',type:'هاكاثون',major:['طب','تمريض','علوم الحاسب','الذكاء الاصطناعي'],level:[],city:'الرياض',end:'2026-11-22'},
+{id:9,t:'تطوع في تنظيم المؤتمرات',o:'أثر مجتمعي',type:'تطوع',major:[],level:[],city:'جدة',end:'2026-12-15'},
+{id:10,t:'تدريب في التسويق الرقمي',o:'Tech Hub',type:'تدريب',major:['تسويق','إعلام','إدارة أعمال'],level:['سنة ثانية','سنة ثالثة','سنة رابعة'],city:'عن بُعد',end:'2026-11-30'},
+{id:11,t:'مسابقة الابتكار الطلابي',o:'مركز الابتكار',type:'مسابقة',major:[],level:[],city:'الرياض',end:'2026-11-28'},
+{id:12,t:'ورشة الثقافة القانونية',o:'أثر مجتمعي',type:'ورشة',major:['قانون'],level:[],city:'جدة',end:'2026-12-10'},
+{id:13,t:'منحة الدراسات العليا في الهندسة',o:'مركز الابتكار',type:'منحة',major:['هندسة'],level:['سنة رابعة','خريج'],city:'الرياض',end:'2027-01-20'},
+{id:14,t:'برنامج الخريجين الجدد في التقنية',o:'Tech Hub',type:'تدريب',major:['علوم الحاسب','هندسة البرمجيات','الأمن السيبراني'],level:['خريج'],city:'جدة',end:'2026-12-05'}];
+const EV=['هاكاثون','ورشة','مسابقة'];
+
+const store={get(k,d){try{const v=localStorage.getItem('khotwa:'+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem('khotwa:'+k,JSON.stringify(v))}catch(e){}}};
+let S={users:store.get('users',{}),session:store.get('session',null)};
+const persist=()=>{store.set('users',S.users);store.set('session',S.session)};
+const me=()=>S.session?S.users[S.session]:null;
+const $=s=>document.querySelector(s),dlg=$('#dlg');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2200)}
+const opts=(a,v,all)=>(all?[all,...a]:a).map(x=>`<option ${x===v?'selected':''}>${x}</option>`).join('');
+
+let F={q:'',type:ALL,major:'كل التخصصات',level:'كل المستويات',city:'كل المدن'};
+function card(o){
+ const u=me(),sv=u&&u.saved.includes(o.id),ap=u&&u.applied.includes(o.id);
+ return `<article class="card opp"><span class="tag">${o.type}</span><h3>${o.t}</h3>
+ <div class="m">${o.o} · ${o.city}</div>
+ <div class="m">${o.major.length?o.major.slice(0,2).join('، ')+(o.major.length>2?'…':''):'كل التخصصات'} — آخر موعد ${o.end}</div>
+ <div class="row"><button class="btn sm" onclick="act(${o.id},'applied')" ${ap?'disabled':''}>${ap?'تم التسجيل':'سجّل الآن'}</button>
+ <button class="btn ghost sm" onclick="act(${o.id},'saved')">${sv?'إزالة الحفظ':'حفظ'}</button></div></article>`}
+const listOf=(a,msg)=>a.length?a.map(card).join(''):`<div class="empty">${msg}</div>`;
+function match(o){return (F.type===ALL||o.type===F.type)&&(F.major==='كل التخصصات'||!o.major.length||o.major.includes(F.major))&&(F.level==='كل المستويات'||!o.level.length||o.level.includes(F.level))&&(F.city==='كل المدن'||o.city===F.city)&&(!F.q||(o.t+o.o).includes(F.q))}
+function draw(){
+ $('#typePills').innerHTML=[ALL,...TYPES].map(t=>`<button class="${t===F.type?'on':''}" onclick="F.type='${t}';draw()">${t}</button>`).join('');
+ $('#list').innerHTML=listOf(OPPS.filter(match),'لا توجد فرص بهذه الاختيارات. خفف الفلاتر وجرّب مرة ثانية.');
+ $('#evList').innerHTML=listOf(OPPS.filter(o=>EV.includes(o.type)),'لا توجد فعاليات حاليًا.');
+ drawDash();
+}
+function drawDash(){
+ const u=me();$('#dash').hidden=!u;$('#authBtn').innerHTML=u?'':'<button class="btn sm" onclick="openAuth(\'login\')">تسجيل الدخول</button> <button class="btn ghost sm" onclick="startNow()">ابدأ الآن</button>';
+ if(!u)return;
+ const by=ids=>ids.map(i=>OPPS.find(o=>o.id===i)).filter(Boolean);
+ const rec=OPPS.map(o=>[o,score(o,u)]).filter(x=>x[1]>=0).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
+ $('#dTitle').textContent='لوحة الطالب 👋 أهلًا '+u.name.split(' ')[0];
+ $('#sSaved').textContent=u.saved.length;$('#sApplied').textContent=u.applied.length;$('#sRec').textContent=rec.length;
+ $('#recList').innerHTML=listOf(rec,'حدّث ملفك لتظهر لك فرص مقترحة.');
+ $('#savedList').innerHTML=listOf(by(u.saved),'لم تحفظ أي فرصة بعد.');
+ $('#appList').innerHTML=listOf(by(u.applied),'لم تسجل في أي فرصة بعد.');
+}
+function score(o,u){let s=0;if(o.major.includes(u.major))s+=3;else if(!o.major.length)s+=1;else return -1;
+ if(!o.level.length||o.level.includes(u.level))s+=2;else return -1;if(u.interests.includes(o.type))s+=2;return s}
+function act(id,k){
+ const u=me();if(!u){openAuth('login');toast('سجّل الدخول أولًا');return}
+ if(k==='saved'){const i=u.saved.indexOf(id);i>=0?u.saved.splice(i,1):u.saved.push(id);toast(i>=0?'أُزيلت من المحفوظات':'تم الحفظ')}
+ else if(!u.applied.includes(id)){u.applied.push(id);toast('تم تسجيلك في الفرصة')}
+ persist();draw();
+}
+function goDash(){if(!me()){openAuth('login','dash');return}$('#dash').scrollIntoView()}
+function startNow(){me()?goDash():openAuth('register','dash')}
+
+function openAuth(mode,next){
+ const reg=mode==='register';
+ $('#dlgBody').innerHTML=`<h3 style="margin-top:0">${reg?'أنشئ ملفك':'تسجيل الدخول'}</h3>
+ ${reg?'<div class="f"><label for="a_n">الاسم</label><input id="a_n"></div>':''}
+ <div class="f"><label for="a_e">البريد الإلكتروني</label><input id="a_e" type="email" dir="ltr"></div>
+ <div class="f"><label for="a_p">كلمة المرور (6 أحرف على الأقل)</label><input id="a_p" type="password" dir="ltr"></div>
+ ${reg?profileFields({major:MAJORS[0],level:LEVELS[0],skills:'',interests:[]}):''}
+ <div class="err" id="a_err"></div>
+ <div class="row"><button class="btn" onclick="submitAuth('${mode}','${next||''}')">${reg?'إنشاء الحساب':'دخول'}</button>
+ <button class="btn ghost" onclick="openAuth('${reg?'login':'register'}','${next||''}')">${reg?'لدي حساب':'حساب جديد'}</button>
+ <button class="btn ghost" onclick="dlg.close()">إغلاق</button></div>`;
+ if(!dlg.open)dlg.showModal();
+}
+function profileFields(u){return `<div class="f"><label for="p_m">التخصص</label><select id="p_m">${opts(MAJORS,u.major)}</select></div>
+ <div class="f"><label for="p_l">المستوى</label><select id="p_l">${opts(LEVELS,u.level)}</select></div>
+ <div class="f"><label for="p_s">المهارات (اختياري)</label><input id="p_s" value="${esc(u.skills)}" placeholder="مثال: بايثون، تصميم، كتابة"></div>
+ <div class="f"><span class="lb">الاهتمامات</span><div class="cb">${TYPES.map(t=>`<label><input type="checkbox" class="p_i" value="${t}" ${u.interests.includes(t)?'checked':''}> ${t}</label>`).join('')}</div></div>`}
+const readProfile=()=>({major:$('#p_m').value,level:$('#p_l').value,skills:$('#p_s').value.trim(),interests:[...document.querySelectorAll('.p_i:checked')].map(x=>x.value)});
+async function hash(s){try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){return btoa(unescape(encodeURIComponent(s)))}}
+async function submitAuth(mode,next){
+ const e=$('#a_e').value.trim().toLowerCase(),p=$('#a_p').value,err=m=>$('#a_err').textContent=m;
+ if(!/^\S+@\S+\.\S+$/.test(e))return err('أدخل بريدًا إلكترونيًا صحيحًا.');
+ if(p.length<6)return err('كلمة المرور أقصر من 6 أحرف.');
+ const h=await hash(p);
+ if(mode==='register'){
+  const n=$('#a_n').value.trim();if(!n)return err('أدخل اسمك.');
+  if(S.users[e])return err('هذا البريد مسجل مسبقًا. سجّل الدخول.');
+  S.users[e]={name:n,email:e,h,saved:[],applied:[],...readProfile()};
+ }else if(!S.users[e]||S.users[e].h!==h)return err('البريد أو كلمة المرور غير صحيحة.');
+ S.session=e;persist();dlg.close();draw();toast('أهلًا بك في خطوة');
+ if(next==='dash')setTimeout(()=>$('#dash').scrollIntoView());
+}
+function editProfile(){const u=me();
+ $('#dlgBody').innerHTML=`<h3 style="margin-top:0">تعديل الملف</h3>${profileFields(u)}
+ <div class="row"><button class="btn" onclick="saveProfile()">حفظ</button><button class="btn ghost" onclick="dlg.close()">إغلاق</button></div>`;dlg.showModal()}
+function saveProfile(){Object.assign(me(),readProfile());persist();dlg.close();draw();toast('تم حفظ الملف')}
+function logout(){S.session=null;persist();draw();scrollTo(0,0);toast('تم تسجيل الخروج')}
+
+$('#fm').innerHTML=opts(MAJORS,'', 'كل التخصصات');
+$('#fl').innerHTML=opts(LEVELS,'','كل المستويات');
+$('#fc').innerHTML=opts(CITIES,'','كل المدن');
+draw();
+</script>
+</body>
+</html>
