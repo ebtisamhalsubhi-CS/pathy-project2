@@ -77,13 +77,13 @@ footer{text-align:center;color:var(--mute);padding:28px 18px}
 <span class="pill">منصة فرص للطلاب</span>
 <h1>كل فرصة تبدأ بـ <b>خطوة.</b></h1>
 <p>اكتشف التدريب والتطوع والهاكاثونات والدورات والمنح والفعاليات التي تناسب تخصصك ومستواك واهتماماتك.</p>
-<button class="btn" onclick="startNow()">أنشئ ملفك الآن ✦</button>
+<button class="btn" onclick="startNow()">أنشئ ملفك الآن</button>
 </div>
-<div class="art" aria-hidden="true">🚀</div>
+<div class="art" aria-hidden="true"><svg viewBox="0 0 24 24" width="84" height="84" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
 </section>
 
 <section id="discover">
-<h2>اكتشف الفرص 🔎</h2><p class="sub">اختر أكثر من فلتر، والنتائج تتغير معك مباشرة.</p>
+<h2>اكتشف الفرص</h2><p class="sub">اختر أكثر من فلتر، والنتائج تتغير معك مباشرة.</p>
 <div class="filters">
 <label for="q">بحث</label><input id="q" placeholder="اسم الفرصة أو الجهة" oninput="F.q=this.value;draw()">
 <div style="margin-top:12px"><span class="lb">نوع الفرصة</span><div class="pills" id="typePills"></div></div>
@@ -96,20 +96,20 @@ footer{text-align:center;color:var(--mute);padding:28px 18px}
 </section>
 
 <section id="events">
-<h2>الفعاليات 📅</h2><p class="sub">هاكاثونات وورش ومسابقات قادمة.</p>
+<h2>الفعاليات</h2><p class="sub">هاكاثونات وورش ومسابقات قادمة.</p>
 <div class="grid" id="evList"></div>
 </section>
 
 <section id="orgs">
-<h2>الجهات والشركات 🏢</h2><p class="sub">جهات تقدم فرصًا للطلاب.</p>
+<h2>الجهات والشركات</h2><p class="sub">جهات تقدم فرصًا للطلاب.</p>
 <div class="grid" id="orgList"></div>
 </section>
 
 <section id="dash" hidden>
-<div class="dh"><h2 id="dTitle" style="margin:0">لوحة الطالب 👋</h2>
-<div class="row" style="margin:0"><button class="btn ghost sm" onclick="editProfile()">✏️ تعديل الملف</button><button class="btn ghost sm" onclick="logout()">↪ تسجيل الخروج</button></div></div>
+<div class="dh"><h2 id="dTitle" style="margin:0">لوحة الطالب</h2>
+<div class="row" style="margin:0"><button class="btn ghost sm" onclick="editProfile()">تعديل الملف</button><button class="btn ghost sm" onclick="logout()">تسجيل الخروج</button></div></div>
 <div class="stats"><div class="card"><b id="sSaved">0</b>فرص محفوظة</div><div class="card"><b id="sApplied">0</b>فرص مسجل بها</div><div class="card"><b id="sRec">0</b>فرص مقترحة</div></div>
-<h2>مقترحة لك 🎯</h2>
+<h2>مقترحة لك</h2>
 <div class="grid" id="recList"></div>
 <h2 style="margin-top:28px">محفوظاتي</h2>
 <div class="grid" id="savedList"></div>
@@ -176,7 +176,7 @@ function drawDash(){
  if(!u)return;
  const by=ids=>ids.map(i=>OPPS.find(o=>o.id===i)).filter(Boolean);
  const rec=OPPS.map(o=>[o,score(o,u)]).filter(x=>x[1]>=0).sort((a,b)=>b[1]-a[1]).map(x=>x[0]);
- $('#dTitle').textContent='لوحة الطالب 👋 أهلًا '+u.name.split(' ')[0];
+ $('#dTitle').textContent='لوحة الطالب · أهلًا '+u.name.split(' ')[0];
  $('#sSaved').textContent=u.saved.length;$('#sApplied').textContent=u.applied.length;$('#sRec').textContent=rec.length;
  $('#recList').innerHTML=listOf(rec,'حدّث ملفك لتظهر لك فرص مقترحة.');
  $('#savedList').innerHTML=listOf(by(u.saved),'لم تحفظ أي فرصة بعد.');
